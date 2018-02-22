@@ -65,7 +65,7 @@ int parse_diameter(char *packet, int size_payload, char json_buffer[], int buffe
   int offset = 0, js_ret = 0;
   
   int ret = is_diameter(packet, size_payload);
-  if(ret != 1) return -1; // invalid params
+  if(ret != 0) return -1; // invalid params
 
   // cast to diameter header
   struct diameter_header_t *diameter = (struct diameter_header_t *) packet;
